@@ -65,6 +65,13 @@ if ( ! function_exists( 'iba_reach2_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		// Add theme support for custom logo
+		add_theme_support( 'custom-logo', array(
+			'width' => 90,
+			'height' => 90,
+			'flex-width' => true,
+		));
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -117,6 +124,9 @@ add_action( 'widgets_init', 'iba_reach2_widgets_init' );
  * Enqueue scripts and styles.
  */
 function iba_reach2_scripts() {
+	// Enqueue google fonts: font-family: 'Oxygen', sans-serif;
+	wp_enqueue_style( 'iba_reach2-fonts', 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+
 	wp_enqueue_style( 'iba-reach2-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'iba-reach2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -155,4 +165,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
