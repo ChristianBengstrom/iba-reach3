@@ -1,4 +1,4 @@
-/*!
+ /*!
 Theme Name: iba-reach2
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -851,3 +851,25 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/* Piijts styling section START */
+
+.entry-content-single { /* controls the single.php structue */
+	margin: 50px;
+	padding: .5em 0;
+	padding-left: 10px;
+	padding-right: 275px;
+}
+
+@media screen and (min-width: 510px) {
+    .entry-content-single {
+        margin: 50px;
+				padding: .5em 0;
+				padding-left: 150px;
+				padding-right: 50px;
+    }
+}
+
+
+
+/* Piijts styling section END */
