@@ -108,9 +108,18 @@ add_action( 'after_setup_theme', 'iba_reach2_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function iba_reach2_widgets_init() {
+	// register_sidebar( array(
+	// 	'name'          => esc_html__( 'Sidebar', 'iba-reach2' ),
+	// 	'id'            => 'sidebar-1',
+	// 	'description'   => esc_html__( 'Add widgets here.', 'iba-reach2' ),
+	// 	'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	// 	'after_widget'  => '</section>',
+	// 	'before_title'  => '<h2 class="widget-title">',
+	// 	'after_title'   => '</h2>',
+	// ) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'iba-reach2' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-custom',
 		'description'   => esc_html__( 'Add widgets here.', 'iba-reach2' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -126,6 +135,8 @@ add_action( 'widgets_init', 'iba_reach2_widgets_init' );
 function iba_reach2_scripts() {
 	// Enqueue google fonts: font-family: 'Oxygen', sans-serif;
 	wp_enqueue_style( 'iba_reach2-fonts', 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+
+	wp_enqueue_style( 'iba_reach2-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 
 	wp_enqueue_style( 'iba-reach2-style', get_stylesheet_uri() );
 
