@@ -41,6 +41,7 @@ if ( ! function_exists( 'iba_reach2_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -64,6 +65,13 @@ if ( ! function_exists( 'iba_reach2_setup' ) ) :
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
+
+		// Add theme support for custom logo
+		add_theme_support( 'custom-logo', array(
+			'width' => 90,
+			'height' => 90,
+			'flex-width' => true,
+		));
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -101,9 +109,18 @@ add_action( 'after_setup_theme', 'iba_reach2_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function iba_reach2_widgets_init() {
+	// register_sidebar( array(
+	// 	'name'          => esc_html__( 'Sidebar', 'iba-reach2' ),
+	// 	'id'            => 'sidebar-1',
+	// 	'description'   => esc_html__( 'Add widgets here.', 'iba-reach2' ),
+	// 	'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	// 	'after_widget'  => '</section>',
+	// 	'before_title'  => '<h2 class="widget-title">',
+	// 	'after_title'   => '</h2>',
+	// ) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'iba-reach2' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-custom',
 		'description'   => esc_html__( 'Add widgets here.', 'iba-reach2' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -117,6 +134,11 @@ add_action( 'widgets_init', 'iba_reach2_widgets_init' );
  * Enqueue scripts and styles.
  */
 function iba_reach2_scripts() {
+	// Enqueue google fonts: font-family: 'Oxygen', sans-serif;
+	wp_enqueue_style( 'iba_reach2-fonts', 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+
+	wp_enqueue_style( 'iba_reach2-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
 	wp_enqueue_style( 'iba-reach2-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'iba-reach2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -155,4 +177,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
