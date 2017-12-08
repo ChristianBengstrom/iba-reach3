@@ -8,11 +8,13 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area, entry-content-single">
 		<main id="main" class="site-main">
 
+			
+		<h2>hello world (go to (to edit)) single php test</h2>
 		<?php
+		// echo "<center>"; centers the entry contentTEXT
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
