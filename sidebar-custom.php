@@ -15,7 +15,7 @@ $cat_args=array(
  'orderby' => 'name',
  'order' => 'ASC'
 	);
-	
+
 $categories=get_categories($cat_args);
  foreach($categories as $category) {
 	 $args=array(
@@ -27,7 +27,7 @@ $categories=get_categories($cat_args);
 	 $posts=get_posts($args);
 		 if ($posts) {
 			 echo '<li><h4><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a></h4></li>';
-			 echo "<ul>";
+			 echo "<ul class='dot'>";
 			 foreach($posts as $post) {
 				 setup_postdata($post); ?>
 
@@ -41,7 +41,7 @@ $categories=get_categories($cat_args);
 	 } // foreach($categories
 ?>
 
-		<li>
+		<li class="search-form">
 			<?php get_search_form(); ?>
 		</li>
 
