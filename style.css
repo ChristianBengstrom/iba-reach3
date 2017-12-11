@@ -969,14 +969,145 @@ object {
 	height: 65px;
 }
 
-/* Piijts styling section START */
+/*Christians section*/
+.intro {
+	color: #666;
+}
+.intro h5 {
+	padding: 0 1em;
+}
 
+/* Sidebar*/
+.sidebar-custom {
+	position: fixed;
+	padding: 3em 1em 3em 0;
+	margin-top: 1em;
+	background-color: #f1f1f1;
+	border-radius: 7.5px;
+	width: 22%;
+}
+
+.sidebar-custom ul, .sidebar-custom ol {
+	margin: 0 0 0 3.5em;
+	padding: 0;
+}
+.sidebar-custom ul li, .sidebar-custom ol li {
+	list-style-type: none;
+}
+.sidebar-custom ul li a, .sidebar-custom ol li a {
+	color: #455056;
+	text-decoration: underline;
+}
+.sidebar-custom ul li p, .sidebar-custom ol li p {
+	margin-bottom: 0.5em;
+	font-size: 1.3em;
+}
+.sidebar-custom ul .dot li, .sidebar-custom ol .dot li {
+	list-style-type: circle;
+	padding-left: 0.5em;
+}
+.sidebar-custom ul .dot li:nth-last-child(1), .sidebar-custom ol .dot li:nth-last-child(1) {
+	padding-bottom: 0;
+}
+
+.search-form {
+	padding: 2em 0 0 0;
+}
+.search-submit {
+	visibility: hidden;
+}
+
+/* POSTS (Masonry grid - inactivated)*/
+.masonry {
+    margin: 1em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+.post-heading {
+	padding-bottom: 0.5em;
+}
+.item {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 0 1em 1em 1em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /*box-shadow: 2px 2px 4px 0 #ccc;*/
+}
+.item a {
+	color: #455056;
+	text-decoration: underline;
+}
+.connector-female {
+	display: block;
+	margin: 0 calc(50% - 25px);
+	width: 50px;
+}
+
+	.cls-2 {
+	fill:#fff;
+	stroke-miterlimit:10;
+}
+
+.connector {
+	display: block;
+	margin: 0 calc(50% - 25px);
+	width: 50px;
+}
+.cls-1 {
+	fill:#f1f1f1;
+}
+
+/*media q's*/
+@media only screen and (min-width: 200px) {
+	.intro {
+		padding: 15em 0 7em 0;
+		margin: 2em 0 0;
+	}
+	.post-text p{
+		font-size: 1.4em;
+		text-align: center;
+		padding: 1.5em 0 1em 0;
+	}
+}
+@media only screen and (min-width: 400px) {
+		.sidebar-custom {
+        left: 4%;
+    }
+		.post-heading {
+			font-size: 2em;
+		}
+		.post-text p{
+			font-size: 1.4em;
+			text-align: center;
+			padding: 1.5em 0 1em 0;
+		}
+}
+@media only screen and (min-width: 769px) {
+	.post-text p{
+		font-size: 2em;
+		text-align: center;
+		padding: 2em 0 1.5em 0;
+	}
+	.post-heading {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.intro {
+		padding: 5em 0 7em 0;
+		margin: 2em 0 0;
+	}
+}
+
+
+/* Piijts styling section END */
 .content-sp {
 	margin: 0 auto;
 	text-align: justify;
 }
-
-
-
-
-/* Piijts styling section END */
