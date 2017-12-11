@@ -1,4 +1,4 @@
-/*!
+ /*!
 Theme Name: iba-reach2
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -52,6 +52,7 @@ html {
 
 body {
 	margin: 0;
+	font-family: 'Oxygen', sans-serif;
 }
 
 article,
@@ -110,8 +111,40 @@ dfn {
 }
 
 h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+	margin: 0.3em 0;
+	font-family: 'Oxygen', sans-serif;
+}
+
+/*FONT-SIZES*/
+@media screen and (min-width: 700px) {
+	h1 {
+		font-size: 3.5em;
+	}
+	h2 {
+		font-size: 2em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+	p {
+		font-size: 1.1em;
+		font-weight: 100;
+	}
+}
+@media screen and (max-width: 600px){
+	h1 {
+		font-size: 2.2em;
+	}
+	h2 {
+		font-size: 1.2em;
+	}
+	h3 {
+		font-size: 1.0em;
+	}
+	p {
+		font-size: 0.9em;
+		font-weight: 100;
+	}
 }
 
 mark {
@@ -273,10 +306,13 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 700;
 }
 
 p {
 	margin-bottom: 1.5em;
+	font-family: 'Oxygen', sans-serif;
 }
 
 dfn, cite, em, i {
@@ -383,7 +419,7 @@ img {
 }
 
 figure {
-	margin: 1em 0;
+	margin: 0 auto;
 	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
@@ -669,8 +705,6 @@ a:hover, a:active {
 .entry-content:after,
 .comment-content:before,
 .comment-content:after,
-.site-header:before,
-.site-header:after,
 .site-content:before,
 .site-content:after,
 .site-footer:before,
@@ -850,4 +884,223 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*THE HEADER*/
+.site-header {
+	position: absolute;
+	padding: 1em;
+	font-family: 'Oxygen', sans-serif;
+	color: #fff;
+	background-color: #303b42;
+	width: 100%;
+}
+@media screen and (min-width: 600px) {
+	.site-header {
+		padding: 1em 2em;
+	}
+}
+.site-branding {
+	min-height: 45px;
+	display: flex;
+}
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 1em;
+}
+.site-title a {
+	color: white;
+	text-decoration: none;
+}
+.site-title a:hover,
+.site-title a:focus {
+	text-decoration: underline;
+}
+.site-description {
+	margin: 0;
+	font-size: .9em;
+	font-style: italic;
+	font-weight: 100;
+}
+@media screen and (min-width: 900px) {
+	.site-header {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+	}
+	.site-branding {
+		width: 35%;
+		flex: 1 0 auto;
+	}
+	#site-navigation {
+		width: auto;
+		margin-left: auto;
+		float: right;
+		right: 0;
+		/*position: absolute;*/
+	}
+	#site-navigation > div {
+		float: right;
+	}
+}
+.header-image img{
+	display: block;
+	width: 100vw;
+}
+.header-image {
+	max-height: 80vh;
+	overflow: hidden;
+}
+.custom-logo-link img{
+	display: block;
+	height: 65px;
+	width: auto;
+}
+.custom-logo-link {
+	margin-right: 1em;
+}
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
+/*Christians section*/
+.intro {
+	color: #666;
+}
+.intro h5 {
+	padding: 0 1em;
+}
+
+/* Sidebar*/
+.sidebar-custom {
+	position: fixed;
+	padding: 3em 1em 3em 0;
+	margin-top: 1em;
+	background-color: #f1f1f1;
+	border-radius: 7.5px;
+	width: 22%;
+}
+
+.sidebar-custom ul, .sidebar-custom ol {
+	margin: 0 0 0 3.5em;
+	padding: 0;
+}
+.sidebar-custom ul li, .sidebar-custom ol li {
+	list-style-type: none;
+}
+.sidebar-custom ul li a, .sidebar-custom ol li a {
+	color: #455056;
+	text-decoration: underline;
+}
+.sidebar-custom ul li p, .sidebar-custom ol li p {
+	margin-bottom: 0.5em;
+	font-size: 1.3em;
+}
+.sidebar-custom ul .dot li, .sidebar-custom ol .dot li {
+	list-style-type: circle;
+	padding-left: 0.5em;
+}
+.sidebar-custom ul .dot li:nth-last-child(1), .sidebar-custom ol .dot li:nth-last-child(1) {
+	padding-bottom: 0;
+}
+
+.search-form {
+	padding: 2em 0 0 0;
+}
+.search-submit {
+	visibility: hidden;
+}
+
+/* POSTS (Masonry grid - inactivated)*/
+.masonry {
+    margin: 1em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+.post-heading {
+	padding-bottom: 0.5em;
+}
+.item {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 0 1em 1em 1em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /*box-shadow: 2px 2px 4px 0 #ccc;*/
+}
+.item a {
+	color: #455056;
+	text-decoration: underline;
+}
+.connector-female {
+	display: block;
+	margin: 0 calc(50% - 25px);
+	width: 50px;
+}
+
+	.cls-2 {
+	fill:#fff;
+	stroke-miterlimit:10;
+}
+
+.connector {
+	display: block;
+	margin: 0 calc(50% - 25px);
+	width: 50px;
+}
+.cls-1 {
+	fill:#f1f1f1;
+}
+
+/*media q's*/
+@media only screen and (min-width: 200px) {
+	.intro {
+		padding: 15em 0 7em 0;
+		margin: 2em 0 0;
+	}
+	.post-text p{
+		font-size: 1.4em;
+		text-align: center;
+		padding: 1.5em 0 1em 0;
+	}
+}
+@media only screen and (min-width: 400px) {
+		.sidebar-custom {
+        left: 4%;
+    }
+		.post-heading {
+			font-size: 2em;
+		}
+		.post-text p{
+			font-size: 1.4em;
+			text-align: center;
+			padding: 1.5em 0 1em 0;
+		}
+}
+@media only screen and (min-width: 769px) {
+	.post-text p{
+		font-size: 2em;
+		text-align: center;
+		padding: 2em 0 1.5em 0;
+	}
+	.post-heading {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.intro {
+		padding: 5em 0 7em 0;
+		margin: 2em 0 0;
+	}
 }
