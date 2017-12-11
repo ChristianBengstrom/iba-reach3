@@ -1104,3 +1104,10 @@ object {
 		margin: 2em 0 0;
 	}
 }
+
+
+/* Piijts styling section END */
+.content-sp {
+	margin: 0 auto;
+	text-align: justify;
+}
