@@ -465,8 +465,9 @@ input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	/*border-color: #aaa #bbb #bbb;*/
-	background-color: #fff;
+	background-color: #4f5a61;
 	color: #000;
+	border: none;
 }
 
 input[type="text"],
@@ -915,7 +916,20 @@ object {
 		top: 20%;
 	}
 }
-
+@media screen and (max-width: 600px) {
+	#header-widget-area {
+		z-index: 1;
+	}
+	header#masthead.site-header {
+		z-index: 2;
+	}
+}
+@media screen and (max-width: 400px) {
+	#header-widget-area {
+		font-size: 0.8em;
+		margin-top: 20px;
+	}
+}
 .site-header {
 	position: absolute;
 	padding: 1em;
@@ -1123,6 +1137,18 @@ object {
 		/*padding-top: 0;*/
 	}
 }
+.menu-toggle div {
+	width: 25px;
+	height: 2px;
+	background-color: #fff;
+	margin: 4px 0;
+}
+
+/*If doesnt work, insert following php line inside menu-toggle > button:*/
+/* <?php esc_html_e( 'Primary Menu', 'iba-reach2' ); ?> */
+button.menu-toggle {
+	margin-top: 20px;
+}
 
 /*THE FOOTER*/
 .site-footer {
@@ -1203,6 +1229,16 @@ object {
       color: #FFF;
       position: relative;
 }
+@media screen and (max-width: 960px) {
+	.home-about-textbox {
+
+	}
+}
+@media screen and (max-width: 440px) {
+	.home-about-textbox h1 {
+		font-size: 1.3em;
+	}
+}
 .home-about-textbox h1 {
       color: #fff;
       position: absolute;
@@ -1252,7 +1288,7 @@ object {
 /*Video section*/
 #post-1 {
 	background-color: #303b42;
-	margin-top: 100px;
+	margin-top: 200px;
 	margin: 0 auto;
 	outline: 2px solid rgba(255, 255, 255, 0.3);
       outline-offset: -4em;
@@ -1268,6 +1304,11 @@ object {
 	margin-top: 150px;
 	color: #fff;
 
+}
+@media screen and (max-width: 960px) {
+	#post-1 .entry-header {
+		margin-top: 50px;
+	}
 }
 #post-1 .entry-title {
 
@@ -1296,7 +1337,13 @@ object {
 	transform: translate(-50%, -10%);
 	margin-bottom: 0;
 	padding: 20px;
-	background-color: #666666;
+	background-color: #303b42;
+	width: 900px;
+}
+@media screen and (max-width: 700px) {
+	.videoframe {
+		max-height: 400px;
+	}
 }
 .entry-footer {
 	display: none;
@@ -1323,6 +1370,7 @@ p.video-p {
 div.entry-meta {
 	display: none;
 }
+
 
 /*Interested section*/
 .interested {

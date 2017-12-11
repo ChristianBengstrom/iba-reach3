@@ -3,16 +3,19 @@ $(window).scroll(function() {
 
 })
 
-function parallax() {
+if (matchMedia('only screen and (min-width: 480px)').matches) {
+      function parallax() {
 
-      var wScroll = $(window).scrollTop();
+            var wScroll = $(window).scrollTop();
 
-      $('.parallax--bg').css('background-position',
-      'center '+(wScroll*0.8)+'px')
+            $('.parallax--bg').css('background-position',
+            'center '+(wScroll*0.8)+'px')
 
-      $('.parallax--box').css('top', -5+(wScroll*0.008)+'em')
+            $('.parallax--box').css('top', -5+(wScroll*0.008)+'em')
 
+      }
 }
+
 
 $(".button-fill").hover(function () {
    $(this).children(".button-inside").addClass('full');
