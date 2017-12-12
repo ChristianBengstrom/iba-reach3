@@ -42,10 +42,10 @@ if ( ! function_exists( 'iba_reach2_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Header', 'iba-reach2' ),
-			'footer' => esc_html__( 'Footer', 'iba-reach2' ),
+			'menu-1' => esc_html__( 'Primary', 'iba-reach2' ),
 		) );
 
 		/*
@@ -109,9 +109,18 @@ add_action( 'after_setup_theme', 'iba_reach2_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function iba_reach2_widgets_init() {
+	// register_sidebar( array(
+	// 	'name'          => esc_html__( 'Sidebar', 'iba-reach2' ),
+	// 	'id'            => 'sidebar-1',
+	// 	'description'   => esc_html__( 'Add widgets here.', 'iba-reach2' ),
+	// 	'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	// 	'after_widget'  => '</section>',
+	// 	'before_title'  => '<h2 class="widget-title">',
+	// 	'after_title'   => '</h2>',
+	// ) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'iba-reach2' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-custom',
 		'description'   => esc_html__( 'Add widgets here.', 'iba-reach2' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -128,20 +137,22 @@ function iba_reach2_scripts() {
 	// Enqueue google fonts: font-family: 'Oxygen', sans-serif;
 	wp_enqueue_style( 'iba_reach2-fonts', 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
 
+	wp_enqueue_style( 'iba_reach2-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+
 	wp_enqueue_style( 'iba-reach2-style', get_stylesheet_uri() );
+
+	wp_enqueue_script( 'iba-reach2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'iba-reach2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	//Registering our parallax js file
 	wp_register_script( 'custom-script', get_template_directory_uri() . '/js/parallax.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'custom-script' );
 
-	wp_enqueue_script( 'iba-reach2-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
-
 	wp_localize_script( 'iba-reach2-navigation', 'iba-reach2ScreenReaderText', array(
 		'expand' => __( 'Expand child menu', 'iba-reach2'),
 		'collapse' => __( 'Collapse child menu', 'iba-reach2'),
 	));
-
-	wp_enqueue_script( 'iba-reach2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

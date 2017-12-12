@@ -1,4 +1,4 @@
-/*!
+ /*!
 Theme Name: iba-reach2
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -443,20 +443,24 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 2px solid;
-	border-color: #000;
-	background: transparent;
-	color: #000;
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
-	padding: .5em 1em;
+	padding: .6em 1em .4em;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
 button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
@@ -464,10 +468,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	/*border-color: #aaa #bbb #bbb;*/
-	background-color: #4f5a61;
-	color: #000;
-	border: none;
+	border-color: #aaa #bbb #bbb;
 }
 
 input[type="text"],
@@ -548,7 +549,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-/*.main-navigation {
+.main-navigation {
 	clear: both;
 	display: block;
 	float: left;
@@ -598,10 +599,10 @@ a:hover, a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-}*/
+}
 
 /* Small menu. */
-/*.menu-toggle,
+.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
@@ -613,7 +614,7 @@ a:hover, a:active {
 	.main-navigation ul {
 		display: block;
 	}
-}*/
+}
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -893,6 +894,312 @@ object {
 	display: block;
 }
 
+/*THE HEADER*/
+.site-header {
+	position: absolute;
+	padding: 1em;
+	font-family: 'Oxygen', sans-serif;
+	color: #fff;
+	background-color: #303b42;
+	width: 100%;
+}
+@media screen and (min-width: 600px) {
+	.site-header {
+		padding: 1em 2em;
+	}
+}
+.site-branding {
+	min-height: 45px;
+	display: flex;
+}
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 1em;
+}
+.site-title a {
+	color: white;
+	text-decoration: none;
+}
+.site-title a:hover,
+.site-title a:focus {
+	text-decoration: underline;
+}
+.site-description {
+	margin: 0;
+	font-size: .9em;
+	font-style: italic;
+	font-weight: 100;
+}
+@media screen and (min-width: 900px) {
+	.site-header {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+	}
+	.site-branding {
+		width: 35%;
+		flex: 1 0 auto;
+	}
+	#site-navigation {
+		width: auto;
+		margin-left: auto;
+		float: right;
+		right: 0;
+		/*position: absolute;*/
+	}
+	#site-navigation > div {
+		float: right;
+	}
+}
+.header-image img{
+	display: block;
+	width: 100vw;
+}
+.header-image {
+	max-height: 80vh;
+	overflow: hidden;
+}
+.custom-logo-link img{
+	display: block;
+	height: 65px;
+	width: auto;
+}
+.custom-logo-link {
+	margin-right: 1em;
+}
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
+}
+
+/*Christians section*/
+.intro {
+	color: #666;
+}
+.intro h5 {
+	padding: 0 1em;
+}
+.intro-line {
+	margin-top: 0;
+	margin-bottom: 2em;
+}
+
+/* Sidebar*/
+
+/*on category page*/
+.sidebar-cat .sidebar-custom {
+	position: fixed;
+	/*padding: 3em 1em 3em 0;*/
+	margin-top: 0.9em;
+	background-color: #f1f1f1;
+	border-radius: 7.5px;
+	width: 22%;
+}
+ /*on single post*/
+.sidebar-single .sidebar-custom {
+	position: fixed;
+	/*padding: 3em 1em 3em 0;*/
+	top: 8.6em;
+	margin-top: 0.9em;
+	background-color: #f1f1f1;
+	border-radius: 7.5px;
+	width: 22%;
+}
+
+.sidebar-custom ul, .sidebar-custom ol {
+	margin: 0 0 0 1em;
+	padding: 0;
+}
+.sidebar-custom ul li, .sidebar-custom ol li {
+	list-style-type: none;
+}
+.sidebar-custom ul li a, .sidebar-custom ol li a {
+	color: #455056;
+	text-decoration: underline;
+}
+.sidebar-custom ul li p, .sidebar-custom ol li p {
+	margin-bottom: 0.5em;
+	font-size: 1.3em;
+}
+.sidebar-custom ul .dot li, .sidebar-custom ol .dot li {
+	list-style-type: circle;
+	padding-left: 0.5em;
+}
+.sidebar-custom ul .dot li:nth-last-child(1), .sidebar-custom ol .dot li:nth-last-child(1) {
+	padding-bottom: 0;
+}
+
+.search-form {
+	padding: 1.5em 0 0 0;
+}
+.search-submit {
+	visibility: hidden;
+}
+
+/* POSTS (Masonry grid - inactivated)*/
+.masonry {
+    margin: 1em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+.post-heading {
+	padding-bottom: 0.5em;
+}
+.item {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 0 2em 1em 2em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /*box-shadow: 2px 2px 4px 0 #ccc;*/
+		border-radius: 7px;
+}
+.item a {
+	color: #455056;
+	text-decoration: underline;
+}
+.connector-female {
+	display: block;
+	margin: 0 calc(50% - 25px);
+	width: 50px;
+}
+
+	.cls-2 {
+	fill:#fff;
+	stroke-miterlimit:10;
+}
+
+.connector {
+	display: block;
+	margin: 0 calc(50% - 25px);
+	width: 50px;
+	z-index: 10;
+}
+.cls-1 {
+	fill:#f1f1f1;
+}
+
+.rotate180deg {
+	transform: rotate(180deg);
+	margin-top: -55px;
+}
+
+/*media q's*/
+@media only screen and (min-width: 200px) {
+	.intro {
+		padding: 15em 0 2em 0;
+		margin: 2em 0 0;
+	}
+	.post-text p{
+		font-size: 1.4em;
+		text-align: center;
+		padding: 1.5em 0 1em 0;
+	}
+}
+@media only screen and (min-width: 400px) {
+		.sidebar-custom {
+        left: 4%;
+    }
+		.post-heading {
+			font-size: 2em;
+		}
+		.post-text p{
+			font-size: 1.4em;
+			text-align: center;
+			padding: 1.5em 0 1em 0;
+		}
+}
+@media only screen and (min-width: 769px) {
+	.post-text p{
+		font-size: 2em;
+		text-align: center;
+		padding: 2em 0 1.5em 0;
+	}
+	.post-heading {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.intro {
+		padding: 5em 0 2em 0;
+		margin-top: 2em;
+	}
+}
+
+
+/* Piijts styling section */
+.single-article {
+	background-color: #f1f1f1;
+	padding: 2em;
+	margin: 0 0 0 1em;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+.single-article h1 {
+	font-size: 2.5em;
+	color: #404040;
+}
+.single-article p {
+	font-size: 1.5em;
+	color: #404040;
+}
+
+.post-img {
+	padding: 0;
+	border: none;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	margin-top: 1em;
+	margin: 1em 0 0 1em;
+}
+.post-img img {
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	margin-bottom: 0px;
+}
+/*.clip-svg {
+  clip-path: url(#myClip);
+	-webkit-clip-path: url(#myClip);
+	-moz-clip-path: url(#myClip);
+}*/
+/*.clip-path-img {
+	width: 100%;
+	height: auto;
+}*/
+
+/*media q's*/
+@media only screen and (min-width: 200px) {
+	article .post-img  {
+		margin-top: 11em;
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	article .post-img  {
+		margin-top: 11em;
+	}
+@media only screen and (min-width: 769px) {
+	article .post-img  {
+		margin-top: 11em;
+	}
+}
+@media only screen and (min-width: 900px) {
+	article .post-img  {
+		margin-top: 1em;
+	}
+}
+
+/*Drilons section*/
 
 /*THE HEADER*/
 #header-widget-area {
@@ -1210,7 +1517,7 @@ button.menu-toggle {
       max-width: 80em;
       margin: 0 auto;
 }
-@media (min-width: 60rem) {
+@media (min-width: 60em) {
 	.home-about {
             background-image: url(https://i.imgur.com/q06RLNL.png);
             background-repeat: no-repeat;
@@ -1286,7 +1593,7 @@ button.menu-toggle {
 }
 
 /*Video section*/
-#post-1 {
+#post-37 {
 	background-color: #303b42;
 	margin-top: 200px;
 	margin: 0 auto;
@@ -1297,7 +1604,7 @@ button.menu-toggle {
 	max-width: 80em;
       margin: 0 auto;
 }
-#post-1 .entry-header {
+#post-37 .entry-header {
 	margin: 0 auto;
 	text-align: center;
 	font-family: 'Oxygen', sans-serif;
@@ -1306,11 +1613,11 @@ button.menu-toggle {
 
 }
 @media screen and (max-width: 960px) {
-	#post-1 .entry-header {
+	#post-37 .entry-header {
 		margin-top: 50px;
 	}
 }
-#post-1 .entry-title {
+#post-37 .entry-title {
 
 	color: #d6b17c;
 	position: relative;
