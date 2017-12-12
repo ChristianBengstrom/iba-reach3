@@ -40,3 +40,9 @@
 		} );
 	} );
 } )( jQuery );
+
+
+$(window).scroll(function() {
+      parallax();
+
+})
