@@ -3,7 +3,7 @@ $(window).scroll(function() {
 
 })
 
-if (matchMedia('only screen and (min-width: 480px)').matches) {
+if (matchMedia('only screen and (min-width: 680px)').matches) {
       function parallax() {
 
             var wScroll = $(window).scrollTop();
