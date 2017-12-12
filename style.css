@@ -122,7 +122,7 @@ h1 {
 		font-family: 'Oxygen', sans-serif;
 	}
 	h2 {
-		font-size: 2em;
+		font-size: 3em;
 		font-family: 'Oxygen', sans-serif;
 	}
 	h3 {
@@ -130,26 +130,26 @@ h1 {
 		font-family: 'Oxygen', sans-serif;
 	}
 	p {
-		font-size: 1.1em;
+		font-size: 1.5em;
 		font-weight: 100;
 		font-family: 'Oxygen', sans-serif;
 	}
 }
 @media screen and (max-width: 600px){
 	h1 {
-		font-size: 2.2em;
+		font-size: 3em;
 		font-family: 'Oxygen', sans-serif;
 	}
 	h2 {
-		font-size: 1.2em;
+		font-size: 3em;
 		font-family: 'Oxygen', sans-serif;
 	}
 	h3 {
-		font-size: 1.0em;
+		font-size: 1.5em;
 		font-family: 'Oxygen', sans-serif;
 	}
 	p {
-		font-size: 0.9em;
+		font-size: 1.3em;
 		font-weight: 100;
 		font-family: 'Oxygen', sans-serif;
 	}
@@ -1188,6 +1188,7 @@ object {
 	article .post-img  {
 		margin-top: 11em;
 	}
+}
 @media only screen and (min-width: 769px) {
 	article .post-img  {
 		margin-top: 11em;
@@ -1216,6 +1217,9 @@ object {
 }
 #header-widget-area h2 {
 	margin-bottom: 0;
+}
+#header-widget-area p {
+	margin-top: 10px;
 }
 @media screen and (max-width: 790px) {
 	#header-widget-area {
@@ -1407,6 +1411,12 @@ object {
 .sub-menu.toggled-on {
 	display: block;
 }
+@media screen and (max-width: 600px) {
+	.menu-header-container ul li {
+		width: 100%;
+	}
+}
+
 
 @media screen and (min-width: 600px) {
 	.menu-toggle {
@@ -1465,8 +1475,8 @@ button.menu-toggle {
 	color: #fff;
 	background-color: #303b42;
 	text-align: center;
-	max-width: 80em;
       margin: 0 auto;
+
 }
 @media screen and (min-width: 600px) {
 	.site-footer {
@@ -1484,7 +1494,7 @@ button.menu-toggle {
 		padding: 20px;
 	}
 	.footer-menu ul a {
-		margin-bottom: 35px;
+		margin-bottom: 15px;
 	}
 }
 #menu-footer {
@@ -1509,13 +1519,29 @@ button.menu-toggle {
 	color: #000;
 	transition: all ease-in-out 250ms;
 }
-
+#menu-footer li a {
+	font-size: 1.5em;
+}
+@media screen and (min-width: 600px) {
+	footer#colophon {
+		margin-top: 200px;
+	}
+}
+@media screen and (max-width: 600px) {
+	footer#colophon {
+		margin-top: 100px;
+	}
+}
 
 /*Index.php area*/
-.container {
-      width: 95%;
-      max-width: 80em;
-      margin: 0 auto;
+@media screen and (max-width: 960px) {
+	.home-about-textbox {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		position: absolute;
+
+	}
 }
 @media (min-width: 60em) {
 	.home-about {
@@ -1524,13 +1550,14 @@ button.menu-toggle {
 		background-position: center;
 		background-size: cover;
             padding-bottom: 10em;
+		height: 500px;
       }
 }
 .home-about-textbox {
       background-color: #303b42;
       padding: 4em;
       width: 100vw;
-      margin-left: -2.5%;
+
       outline: 2px solid rgba(255, 255, 255, 0.2);
       outline-offset: -2.5em;
       color: #FFF;
@@ -1543,7 +1570,7 @@ button.menu-toggle {
 }
 @media screen and (max-width: 440px) {
 	.home-about-textbox h1 {
-		font-size: 1.3em;
+		font-size: 1.7em;
 	}
 }
 .home-about-textbox h1 {
@@ -1586,6 +1613,8 @@ button.menu-toggle {
             transform: translateX(0);
       }
 }
+
+
 /* --- PARALLAX */
 .parallax--bg,
 .parallax--box {
@@ -1750,6 +1779,9 @@ div.entry-meta {
 }
 .interested p {
 	margin: 0;
+}
+.menu-header-container ul a {
+	font-size: 1.5em;
 }
 
 // TEST
