@@ -31,6 +31,7 @@ get_header();?>
 			<?php endif; ?>
 		</div>
 	</div>
+	<hr>
 
 
 	<?php  if ( have_posts()){ ?>
@@ -70,8 +71,9 @@ get_header();?>
 			</div>
 			<?php endwhile; ?>
 		</div>
+		<div class="sidebar-cat">
 		<?php }
 		get_sidebar(); ?>
-
+		</div>
 </div>
 <?php get_footer(); ?>

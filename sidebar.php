@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area col-sm-3 col-sm-pull-9 sidebar-custom hidden-xs">
+<aside id="secondary" class="widget-area col-sm-3 col-sm-pull-9 sidebar-custom .hidden-xs">
 	<?php get_sidebar( 'custom' ); ?>
 </aside><!-- #secondary -->
