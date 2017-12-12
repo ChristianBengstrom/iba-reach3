@@ -16,7 +16,7 @@ get_header();?>
 		<div class="intro col-sm-12 ">
 			<?php if (is_category('About IBA')) : ?>
 			<h4 class="text-center">About IBA</h4>
-			<h5 class="text-center">Here you can read topics about the school.</h5>
+			<h5 class="text-center">Here you can read topics about the scool.</h5>
 			<?php elseif (is_category('Economy')) : ?>
 			<h4 class="text-center">Economy</h4>
 			<h5 class="text-center">Here you can get an overview of what you need to know about your economy when moving to Denmark</h5>
@@ -31,7 +31,8 @@ get_header();?>
 			<?php endif; ?>
 		</div>
 	</div>
-	<hr class="intro-line">
+
+
 	<?php  if ( have_posts()){ ?>
 		<div class="col-sm-9 col-sm-push-3 masonry">
 		<?php while ( have_posts() ): the_post(); ?>
@@ -69,10 +70,8 @@ get_header();?>
 			</div>
 			<?php endwhile; ?>
 		</div>
-		<div class="sidebar-cat">
-			<?php }
-			get_sidebar(); ?>
-		</div>
+		<?php }
+		get_sidebar(); ?>
 
 </div>
 <?php get_footer(); ?>
