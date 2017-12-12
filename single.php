@@ -8,12 +8,12 @@
  */
 
 get_header(); ?>
-		<div class="container col-md-8 col-md-offset-4 jumbotron">
+		<div class="container col-sm-8 col-sm-offset-3">
 			<div class="row">
 			<div id="primary" class="content-area">
 			</div>
 		</div>
-		<main id="main" class="site-main content-sp">
+		<main id="main" class="site-main">
 		<?php
 		// echo "<center>"; centers the entry contentTEXT
 		while ( have_posts() ) : the_post();
@@ -30,6 +30,10 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<div class="sidebar-single">
+	<?php
+	get_sidebar();
+	?>
+</div>
 <?php
-get_sidebar();
 get_footer();
