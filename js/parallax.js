@@ -11,7 +11,7 @@ if (matchMedia('only screen and (min-width: 680px)').matches) {
             $('.parallax--bg').css('background-position',
             'center '+(wScroll*0.8)+'px')
 
-            $('.parallax--box').css('top', -5+(wScroll*0.008)+'em')
+            $('.parallax--box').css('top', -5+(wScroll*0.015)+'em')
 
       }
 }
