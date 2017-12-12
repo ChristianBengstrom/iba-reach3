@@ -17,7 +17,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<div class="container">
+				<section class="home-about">
+					<div class="home-about-textbox parallax--box">
+						<h1>About IBA</h1>
+						<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+					</div>
+				</section>
+			</div>
 		<?php
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -29,28 +38,57 @@ get_header(); ?>
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		// 	while ( have_posts() ) : the_post();
+		//
+		// 		/*
+		// 		 * Include the Post-Format-specific template for the content.
+		// 		 * If you want to override this in a child theme, then include a file
+		// 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+		// 		 */
+		// 		get_template_part( 'template-parts/content', get_post_format() );
+		//
+		// 	endwhile;
+		//
+		//
+		//
+		// else :
+		//
+		// 	get_template_part( 'template-parts/content', 'none' );
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
 
+		<?php $recent = new WP_Query("page_id=42"); while($recent->have_posts()) : $recent->the_post();?>
+			<div id="post-37" class="interested">
+			<h3><?php the_title(); ?></h3>
+			<?php the_content();?>
+
+			</div>
+
+		<?php endwhile; ?>
+
+		<script
+			src="https://code.jquery.com/jquery-2.2.4.min.js"
+			integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			crossorigin="anonymous">
+		</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	<?php $recent = new WP_Query("page_id=40"); while($recent->have_posts()) : $recent->the_post();?>
+		<div class="interested">
+		<h3><?php the_title(); ?></h3>
+		<a href="https://www.iba.dk/fuldtidsuddannelser">
+		<div class="button-fill grey">
+			<div class="button-text"><?php the_content(); ?></div>
+			<div class="button-inside">
+				<div class="inside-text">Click</div>
+			</div>
+		</div>
+		</a>
+
+		</div>
+
+	<?php endwhile; ?>
 <?php
-get_sidebar();
 get_footer();
