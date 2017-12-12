@@ -17,7 +17,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<div class="container">
+				<section class="home-about">
+					<div class="home-about-textbox parallax--box">
+						<h1>About IBA</h1>
+						<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+					</div>
+				</section>
+			</div>
 		<?php
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -47,10 +56,29 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
+		<script
+			src="https://code.jquery.com/jquery-2.2.4.min.js"
+			integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			crossorigin="anonymous">
+		</script>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	<?php $recent = new WP_Query("page_id=1800"); while($recent->have_posts()) : $recent->the_post();?>
+		<div class="interested">
+		<h3><?php the_title(); ?></h3>
+		<a href="https://www.iba.dk/fuldtidsuddannelser">
+		<div class="button-fill grey">
+			<div class="button-text"><?php the_content(); ?></div>
+			<div class="button-inside">
+				<div class="inside-text">Click</div>
+			</div>
+		</div>
+		</a>
+
+		</div>
+
+	<?php endwhile; ?>
 <?php
 get_sidebar();
 get_footer();
