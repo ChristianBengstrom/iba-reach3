@@ -1175,6 +1175,7 @@ object {
 		margin-top: 11em;
 	}
 }
+
 @media only screen and (min-width: 400px) {
 	article .post-img  {
 		margin-top: 11em;
@@ -1188,5 +1189,4 @@ object {
 	article .post-img  {
 		margin-top: 1em;
 	}
-}
 }
